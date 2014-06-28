@@ -6,7 +6,8 @@ module.exports = requestUrl
 
 function requestUrl(req) {
   var reqUrlParts = url.parse(req.url)
-  reqUrlParts.protocol = req.connection.encrypted ? 'https' : 'http'
+  reqUrlParts.protocol =
+    (req.connection.encrypted || req.headers['x-forwarded-proto'] === 'https') ? 'https' : 'http'
   reqUrlParts.host = req.headers.host
   return url.format(reqUrlParts)
 }

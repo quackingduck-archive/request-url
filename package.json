@@ -1,6 +1,6 @@
 {
   "name": "request-url",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Compute the url that was used to initiate the request from the request object",
   "main": "index.js",
   "scripts": {
